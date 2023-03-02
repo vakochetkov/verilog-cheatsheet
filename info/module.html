@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head class="popup-info">
+    <meta charset="utf-8" />
+    <meta lang="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Module</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="../css/popup-info.css"
+    />
+  </head>
+  <header class="popup-header">Module</header>
+  <body>
+    <div class="popup-text">
+      <p>
+        Modules are basic building block of a Verilog program. These are the
+        blocks which represent functionalities of a hardware. Modules can be
+        embedded inside another module, or one module can be connected to
+        another module to make complex designs.
+        <br />
+        Code example:
+      </p>
+      <pre class="verilog line-numbers">
+<code>module dff (
+  input d,
+  input clk,
+  input rstn,
+  output reg q );
+
+  assign r = b + c;
+  assign r = b - c;
+  assign r = b | c;
+  assign r = b & c;
+  assign r = b * c;
+  assign r = b >> 1;
+  assign r = b << 2;
+  assign r = ~b;
+
+  always @ (posedge clk) begin
+    if (!rstn)
+      q <= 0;
+    else 
+      q <= d;
+  end
+
+  assign c = d ** 2;
+
+endmodule</code></pre>
+      <p>bla bla bla</p>
+    </div>
+    <script src="../js/code_color.js"></script>
+  </body>
+  <html></html>
+</html>
