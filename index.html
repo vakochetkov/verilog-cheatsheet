@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta lang="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Справка по Verilog</title>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="css/popup.css"
+    />
+  </head>
+
+  <body>
+    <header class="lock-padding">
+      <h1 class="lock-padding">Справка по Verilog</h1>
+    </header>
+
+    <main>
+      <div class="wrapper lock-padding">
+        <div class="container">
+          <div class="text-block">
+            <pre>
+              <span class="section-container">
+<h2>Module</h2>
+<code><a href="#popup" id="module-popup" class="popup-link">module</a> MODID [({PORTID,})];
+  [<a href="#popup" id="input-popup" class="popup-link">input</a> | <a href="#popup" id="output-popup" class="popup-link">output</a> | <a href="#popup" id="inout-popup" class="popup-link">inout</a> [range] {PORTID,};] 
+  [{declaration}]
+  [{parallel_statement}]
+  [specify_block]
+<a href="#popup" id="endmodule-popup" class="popup-link">endmodule</a>
+</code>
+<code>range ::= [constexpr : constrexpr]</code>
+              </span>
+              <span class="section-container">
+<h2>Parallel Statements</h2>
+<code><a href="#popup" id="assign-popup" class="popup-link">assign</a> [(strength1, strength0)] WIRID = expr;</code>
+<code><a href="#popup" id="initial-popup" class="popup-link">initial</a> sequential_statement</code>
+<code><a href="#popup" id="always-popup" class="popup-link">always</a> sequential_statement
+MODID [#({expr,})] INSTID
+  ([{expr,} | {.PORTID(expr),}]);
+delay ::=  number | PARID | (expr [, expr[, expr]])
+</code>
+              </span>
+              <span class="section-container">
+<h2>Sequential Statements</h2>
+<code><a href="#popup" id="begin-popup" class="popup-link">begin</a>[: BLKID  ]
+  [{declaration}]
+  [{sequential_statement}]
+<a href="#popup" id="end-popup" class="popup-link">end</a>
+</code>
+<code><a href="#popup" id="if-popup" class="popup-link">if</a> (expr) sequential_statement
+[<a href="#popup" id="else-popup" class="popup-link">else</a> sequential_statement]
+</code>
+<code><a href="#popup" id="case-popup" class="popup-link">case</a> | <a href="#popup" id="casex-popup" class="popup-link">casex</a> | <a href="#popup" id="casez-popup" class="popup-link">casez</a> (expr)
+  [{{expr,}}: sequential_statement]
+  [<a href="#popup" id="default-popup" class="popup-link">default:</a> sequential_statement]
+<a href="#popup" id="endcase-popup" class="popup-link">endcase</a>
+</code>
+<code><a href="#popup" id="forever-popup" class="popup-link">forever</a> sequential_statement</code>
+<code><a href="#popup" id="repeat-popup" class="popup-link">repeat</a> (expr) sequential_statement</code>
+<code><a href="#popup" id="while-popup" class="popup-link">while</a> (expr) sequential_statement</code>
+<code><a href="#popup" id="for-popup" class="popup-link">for</a> (lvalue = expr; expr; lvalue = expr)
+  sequential_statement
+</code>
+<code><a href="#popup" id="wait-popup" class="popup-link">wait</a> (expr) sequential_statement</code>
+<code><a href="#popup" id="fork-popup" class="popup-link">fork</a>[: BLKID  ]
+  [{declaration}]
+  [{sequential_statement}]
+<a href="#popup" id="fork-popup" class="popup-link">join</a>
+</code>
+<code>TASKID[({expr,})];</code>
+              </span>
+              <span class="section-container">
+<h2>Declarations</h2>
+<code><a href="#popup" id="parameter-popup" class="popup-link">parameter</a> {PARID = constexpr,};</code>
+<code><a href="#popup" id="wire-popup" class="popup-link">wire</a> [range] {WIRID,};</code>
+<code><a href="#popup" id="reg-popup" class="popup-link">reg</a> [range] {REGID [range],};</code>
+<code><a href="#popup" id="integer-popup" class="popup-link">integer</a> {INTID [range],};</code>
+<code><a href="#popup" id="time-popup" class="popup-link">time</a> {TIMEID [range],};</code>
+<code><a href="#popup" id="real-popup" class="popup-link">real</a> {REALID,};</code>
+<code><a href="#popup" id="realtime-popup" class="popup-link">realtime</a> {REALTIMID,};</code>
+<code><a href="#popup" id="task-popup" class="popup-link">task</a> TASKID;
+[<a href="#popup" id="input-popup" class="popup-link">input</a> | <a href="#popup" id="output-popup" class="popup-link">output</a> | <a href="#popup" id="inout-popup" class="popup-link">inout</a> [range] {ARGID,};] 
+  [{declaration}]
+<a href="#popup" id="begin-popup" class="popup-link">begin</a>
+  [{sequential_statement}]
+<a href="#popup" id="end-popup" class="popup-link">end</a>
+<a href="#popup" id="endtask-popup" class="popup-link">endtask</a>
+</code>
+<code><a href="#popup" id="function-popup" class="popup-link">function</a> FCTID;
+  [<a href="#popup" id="input-popup" class="popup-link">input</a> [range] {ARGID,};] 
+  [{declaration}]
+<a href="#popup" id="begin-popup" class="popup-link">begin</a>
+  [{sequential_statement}]
+<a href="#popup" id="end-popup" class="popup-link">end</a>
+<a href="#popup" id="endfunction-popup" class="popup-link">endfunciton</a>
+</code>
+              </span>
+              <span class="section-container">
+<h2>System Tasks</h2>
+<code><a href="#popup" id="display-popup" class="popup-link">$display</a> (&lt;list_of_arguments&gt;);</code>
+<code><a href="#popup" id="display-popup" class="popup-link">$write</a> (&lt;list_of_arguments&gt;);</code>
+<code><a href="#popup" id="display-popup" class="popup-link">$timeformat</a> (&lt;unit_number&gt;, &lt;precision&gt;,<br>  &lt;suffix_string&gt;, &lt;minimum_field_width&gt;);</code>
+<code><a href="#popup" id="display-popup" class="popup-link">$printtimescale</a> (&lt;module_name&gt;);</code>
+<code><a href="#popup" id="display-popup" class="popup-link">&lt;file_descriptor&gt; = $fopen</a> (&lt;file_name&gt;,<br>  &lt;option&gt;);</code>
+<code><a href="#popup" id="display-popup" class="popup-link">$fclose</a>(&lt;file_descriptor&gt;);</code>
+<code><a href="#popup" id="display-popup" class="popup-link">$fdisplay</a>(&lt;file_descriptor&gt;, &lt;variable&gt;);</code>
+<code><a href="#popup" id="display-popup" class="popup-link">$fwrite</a> (&lt;file_descriptor&gt;, &lt;variable&gt;);</code>
+<code><a href="#popup" id="display-popup" class="popup-link">$fstrobe</a> (&lt;file_descriptor&gt;, &lt;variable&gt;);</code>
+<code><a href="#popup" id="display-popup" class="popup-link">$fmonitor</a> (&lt;file_descriptor&gt;, &lt;variable&gt;);</code>
+              </span>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="lock-padding">
+      <div class="footer__content lock-padding">
+        Обратная связь: <br />
+        <i>dmitsfrnv@gmail.com</i>
+      </div>
+    </footer>
+
+    <div id="popup" class="popup">
+      <div class="popup__body">
+        <div class="popup__content">
+          <!-- <div class="popup__title">Модальное окно №1</div> -->
+          <div class="popup__text">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore
+            porro vel dolorum nemo quam aut quos, aperiam, necessitatibus quasi
+            libero vero a assumenda itaque hic! Nihil fugit ad debitis quaerat
+            iusto deleniti eius doloribus enim explicabo praesentium, non
+            molestiae consequuntur error neque fugiat dolorum velit voluptate
+            rerum asperiores! Harum minima voluptatibus accusantium aspernatur
+            nam quibusdam. Eum sunt molestias magni laborum, qui dolore cum
+            itaque. Cum ducimus sint tenetur incidunt, eum illum ea recusandae
+            odio totam labore velit adipisci suscipit quasi est laborum quis
+            ullam, eveniet nemo libero magni? Mollitia praesentium nemo aliquid
+            minima veniam labore officiis illo qui consequatur ipsam.
+          </div>
+          <span class="popup__buttons">
+            <a href="#" class="open-link close-popup">Подробнее</a>
+            <a href="#" class="close-popup">Закрыть</a>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/popup.js"></script>
+  </body>
+</html>
