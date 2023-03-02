@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head class="popup-info">
+    <meta charset="utf-8" />
+    <meta lang="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Popup Window</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="../css/popup-info.css"
+    />
+  </head>
+  <header class="popup-header">Модуль</header>
+  <body>
+    <div class="popup-text">
+      <p>
+        Модули - основные строительные блоки HDL дизайна. Эти блоки представляют
+        функциональность аппаратуры. Модули могут быть встроены внутрь других
+        модулей или они могут быть подключены к другим модулям для создания
+        сложного дизайна.
+        <br />
+        Пример описания триггера:
+      </p>
+      <pre class="verilog line-numbers">
+<code>
+module dff (
+  input d,
+  input clk,
+  input rstn,
+  output reg q );
+
+  always @ (posedge clk) begin
+    if (!rstn)
+      q <= 0;
+    else 
+      q <= d;
+  end
+
+endmodule
+</code></pre>
+      <p>
+        Модуль представляет собой конструкторскую единицу, которая реализует
+        определенные поведенческие характеристики и при синтезе преобразуется в
+        цифровую схему. Любая комбинация входов может быть дана модулю, и он
+        обеспечит соответствующий выход. Это позволяет повторно использовать
+        один и тот же модуль для формирования более крупных модулей, реализующих
+        более сложное аппаратное обеспечение.
+        <br />
+        <i>Например, DFF, показанный выше, может быть объединен в цепочку для
+        формирования сдвигового регистра:</i>
+      </p>
+      <pre class="verilog line-numbers">
+<code>
+module shift_reg (  
+  input 	d,
+  input  	clk,
+  input 	rstn,
+  output 	q );
+
+  wire [2:0] q_net;
+
+  dff u0 (.d(d),        .clk(clk), .rstn(rstn), .q(q_net[0]));
+  dff u1 (.d(q_net[0]), .clk(clk), .rstn(rstn), .q(q_net[1]));
+  dff u2 (.d(q_net[1]), .clk(clk), .rstn(rstn), .q(q_net[2]));
+  dff u3 (.d(q_net[2]), .clk(clk), .rstn(rstn), .q(q));
+
+endmodule
+</code></pre>
+      <p>
+        Модуль верхнего уровня — это модуль, который содержит все остальные
+        модули. Модуль верхнего уровня не создается ни в каком другом модуле.
+      </p>
+    </div>
+    <script src="../js/code_color.js"></script>
+  </body>
+  <html></html>
+</html>

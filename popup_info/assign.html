@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta lang="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Popup Window</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="../css/popup-info.css"
+    />
+  </head>
+  <header class="popup-header">Assign</header>
+  <body>
+    <div class="popup-text">
+      <p>
+        The assignment syntax starts with the keyword assign followed by the
+        signal name which can be either a single signal or a concatenation of
+        different signal nets. The drive strength and delay are optional and are
+        mostly used for dataflow modeling than synthesizing into real hardware.
+        The expression or signal on the right hand side is evaluated and
+        assigned to the net or expression of nets on the left hand side.
+        <br />
+        Code example:
+      </p>
+      <pre>
+            <code class="verilog">
+  assign &ltnet_expression> = [drive_strength] [delay] 
+      &ltexpression of different signals or constant value>
+            </code>
+            </pre>
+    </div>
+    <script src="../js/code_color.js"></script>
+  </body>
+  <html></html>
+</html>
