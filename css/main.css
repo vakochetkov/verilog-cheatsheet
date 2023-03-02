@@ -1,0 +1,171 @@
+/* Setting the html to the full height of the page. */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+/* Setting the body to the full height of the page. */
+body {
+  margin: 0px auto;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: 'LabGrotesque', sans-serif;
+}
+
+.lock {
+  overflow: hidden;
+}
+
+/* Styling the header. */
+header {
+  padding: 7px 0px;
+  background-color: #0f45c7;
+  color: white;
+  text-align: center;
+  min-width: 100%;
+  margin: 0px auto;
+}
+
+main {
+  padding-top: 20px;
+  padding-bottom: 80px;
+  min-height: 100%;
+  background-color:white;
+}
+
+/* Setting the footer to the bottom of the page. */
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 100%;
+  height: 80px;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+
+  border-style: solid;
+  border-width: 1px 0px 0px 0px;
+  border-color: rgba(225, 225, 225, 1);
+}
+
+.footer__content {
+  padding: 20px;
+  text-align: center;
+}
+
+.container {
+  margin: 0px auto;
+  padding: 0px auto;
+  max-width: 1600px;
+  align-content: center;
+}
+
+code {
+  display: inline-block;
+  width: 95%;
+  border: 1px none;
+  border-radius: 5px;
+  background-color: rgba(15, 69, 199, 0.08);
+  margin: 4px;
+  padding: 7px;
+}
+
+h2 {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.text-block h2 {
+  padding-left: 10px;
+  color: rgba(15, 69, 199, 1);
+}
+
+iframe {
+  width: 80vw;
+  height: 80vh;
+}
+
+/* Setting the text-block to be in 4 columns. */
+.text-block {
+  display: inline-block;
+  columns: 4;
+} 
+
+.section-container {
+  display: inline-block;
+  /* display: block; */
+  width: 100%;
+  margin-left: -100px;
+  /* margin-top: -50px; */
+}
+
+.popup-link{
+  cursor: pointer;
+  font-size: 17px;
+  text-decoration: unset;
+  color: black;
+  font-weight: bold;
+}
+
+body > iframe {
+  display: none;
+}
+
+@media (max-width: 1650px) {
+  .container {
+    max-width: 1200px;
+  }
+  .text-block {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 1450px) {
+  .container {
+    max-width: 970px;
+  }
+
+  .text-block {
+    column-count: 2;
+  }
+
+}
+
+@media (max-width: 975px) {
+  .container {
+    max-width: 750px;
+  }
+
+  .text-block {
+    column-count: 1;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .text-block {
+    display: inline;
+    margin-left: 40px;
+  }
+
+  .section-container {
+    display: block;
+    margin-left: 0px;
+  }
+
+  header {
+    min-width: 700px;
+  }
+
+  footer {
+    min-width: 700px;
+  }
+
+  iframe {
+    min-width: 600px;
+    min-height: 800px;
+  }
+}
